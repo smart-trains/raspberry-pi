@@ -7,11 +7,11 @@ s = serial.Serial(port="/dev/ttyAMA0")
 # Program
 try:
 	while True:
-		s.write("caosi pangpang")
-		sleep(1)
+		s.write(b"caosi pangpang")
+		sleep(0.1)
 except KeyboardInterrupt:
 	pass
 
 print("\n")
 print("Gracefully exiting")
-serial.close()
+s.close()
