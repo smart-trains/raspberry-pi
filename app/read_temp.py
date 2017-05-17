@@ -1,5 +1,7 @@
 from digitemp.master import UART_Adapter
 from digitemp.device import DS18B20
+import http.client as http
+import json
 
 server = "52.65.244.105"
 api = "/api/temperature"
@@ -17,7 +19,7 @@ temp = sensor.get_temperature()
 print(temp)
 
 conn = http.HTTPConnection(server)
-	headers = {'Content-type': 'application/json'}
+headers = {'Content-type': 'application/json'}
 try:
 	conn.request("POST", api, json.dumps({'temperature': temp}), headers)
 	print("report to {0} successful".format(server))
