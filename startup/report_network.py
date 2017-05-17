@@ -26,42 +26,67 @@ def getip():
 	except:
 		return None
 
-_max_count = 1000
-_count = 0
-_connected = False
-_end_trying = False
-
-while not _end_trying:
+def test_internet():
 	conn = http.HTTPConnection("www.google.com", timeout=2)
+	result = False
 	try:
 		conn.request("HEAD", "/")
-		_connected = True
-		_end_trying = True
+		result = True
 	except:
 		pass
 	finally:
 		conn.close()
+	return result
 
-	_count += 1
-	if _count >= _max_count:
-		_end_trying = True
-	if _connected:
+def report_network():
+	conn = http.HTTPConnection(_server)
+	headers = {'Content-type': 'application/json'}
+	result = False
+	try:
+		conn.request("POST", _api, json.dumps({'ssid': getssid(), 'ip': getip()}), headers)
+		result = True
+	except:
+		pass
+	finally:
+		conn.close()
+	return result
+
+_connected = False
+
+_max_count = 1000
+_count = 0
+_end_trying = False
+
+_server = "52.65.244.105"
+_api = "/api/rpi_ip"
+
+while not _end_trying:
+	if test_internet():
 		print("attempt {0}: successful".format(_count))
+		_end_trying = True
+		_connected = True
 	else:
 		print("attempt {0}: failed".format(_count))
-	if not _end_trying:
-		sleep(1)
+		if _count >= _max_count:
+			_end_trying = True
+		else:
+			sleep(1)
+	_count += 1
 
 if (_connected):
-	_sent = False
-	conn = http.HTTPConnection("52.65.244.105")
-	headers = {'Content-type': 'application/json'}
+	_count = 0
+	_end_trying = False
+	while not _end_trying:
+		if report_network():
+			print('attempt to connect {0} successful'.format(_server))
+			_end_trying = True
+		else:
+			print('attempt to connect {0} failed'.format(_server))
+			if _count >= _max_count:
+				_end_trying = True
+			else:
+				sleep(1)
+		
+	
 
-	while not _sent:
-		try:
-			conn.request("POST", "/api/rpi_ip", json.dumps({'ssid': getssid(), 'ip': getip()}), headers)
-			_sent = True
-		except:
-			pass
-		finally:
-			conn.close()
+
