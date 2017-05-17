@@ -7,7 +7,7 @@ gpio.setup(11, gpio.IN)
 
 try:
 	while True:
-		print("[{0}] {1}".format(dt.now, gpio.input(11)))
+		print("[{0}] {1}".format(dt.now(), gpio.input(11)))
 		sleep(0.5)
 except KeyboardInterrupt:
 	pass
