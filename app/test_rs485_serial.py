@@ -2,7 +2,7 @@ import serial
 from time import sleep
 from datetime import datetime as dt
 
-s = serial.Serial(port="/dev/ttyAMA0")
+s = serial.Serial(port="/dev/ttyAMA0", baudrate=38400)
 
 # Program
 try:
