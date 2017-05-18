@@ -13,8 +13,8 @@ def report_temp(server, api, data):
     try:
         conn.request("POST", api, json.dumps(data), headers)
         result = True
-    except:
-        pass
+    except Exception as e:
+        print(e)
     finally:
         conn.close()
     return result
