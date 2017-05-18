@@ -57,16 +57,16 @@ if __name__ == '__main__':
 		_count = 0
 
 		while not _end_trying:
-		if func():
-			print("attempt {0}: successful".format(_count))
-			_end_trying = True
-		else:
-			print("attempt {0}: failed".format(_count))
-			if _count >= max_trials:
+			if func():
+				print("attempt {0}: successful".format(_count))
 				_end_trying = True
 			else:
-				sleep(1)
-				_count += 1
+				print("attempt {0}: failed".format(_count))
+				if _count >= max_trials:
+					_end_trying = True
+				else:
+					sleep(1)
+					_count += 1
 
 	_max_count = 1000
 	_server = "52.65.244.105"
