@@ -3,30 +3,46 @@ import RPi.GPIO as gpio
 from time import sleep, time
 from datetime import datetime as dt
 
-#RE = 13 # Read enable, active LOW
-#DE = 15 # Drive enable, active HIGH
+period = 0.1/6
 
-s = serial.Serial(port="/dev/ttyAMA0", baudrate=38400, timeout=0.1)
-#gpio.setmode(gpio.BOARD)
-#gpio.setup(RE, gpio.OUT)
-# gpio.setup(DE, gpio.OUT)
-#gpio.output(RE, gpio.LOW)
-# gpio.output(DE, gpio.LOW)
+s = serial.Serial(port="/dev/ttyAMA0", baudrate=38400, timeout=period/2)
 
-# Program
+ctrl = 0b01010001
+
 try:
 	while True:
-#		gpio.output(RE, gpio.HIGH)
-#		gpio.output(DE, gpio.HIGH)
-		s.write(bytearray([0x51]))
-#		gpio.output(RE, gpio.LOW)
-#		gpio.output(DE, gpio.LOW)
 		start_t = time()
+		s.write(bytearray([ctrl]))
+		start_wait_t = time()
 		while(not s.in_waiting):
-			if(time() - start_t > 0.1):
+			if(time() - start_wait_t > period):
 				break
-		print(s.read(9))
-		sleep(0.01)
+		data = s.read(66)
+		print('time: {0}'.format(str(dt.now())))
+
+		if not data:
+			print('ctrl: {0}'.format(bin(ctrl)))
+			print('NO DATA')
+		else:		
+			for i, datum in enumerate(data):
+				if i == 0:
+					print('resp ctrl: {0}'.format(bin(datum)))
+				elif i == 1:
+					print('env temp: {0}'.format(str(datum * 0.0625)))
+				else:
+					if (i-1) % 8 == 0:
+						end = None
+					else:
+						end = ''
+					print('sensor {0}: {1} '.format(str(i-2), str(datum * 0.25)), end=end)
+		print('')
+		ctrl = ctrl + 1
+		if ctrl > 0b01010110:
+			ctrl = 0b01010001
+		time_left = period - (time() - start_t)
+		
+		if time_left > 0:
+			sleep(time_left)
 
 except KeyboardInterrupt:
 	pass
