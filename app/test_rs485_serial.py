@@ -2,6 +2,7 @@ import serial
 import RPi.GPIO as gpio
 from time import sleep, time
 from datetime import datetime as dt
+import http.client as http
 
 num_dct = 6
 init_addr = 0b0001
