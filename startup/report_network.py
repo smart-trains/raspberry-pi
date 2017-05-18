@@ -52,16 +52,16 @@ def report_network(server, api):
 	return result
 
 if __name__ == '__main__':
-	def try_until(func, max_trials):
+	def try_until(func, max_trials, succ_cb, fail_cb, *args):
 		_end_trying = False
 		_count = 0
 
 		while not _end_trying:
-			if func():
-				print("attempt {0}: successful".format(_count))
+			if func(*args[4:]):
+				succ_cb(_count)
 				_end_trying = True
 			else:
-				print("attempt {0}: failed".format(_count))
+				fail_cb(_count)
 				if _count >= max_trials:
 					_end_trying = True
 				else:
@@ -72,22 +72,21 @@ if __name__ == '__main__':
 	_server = "52.65.244.105"
 	_api = "/api/rpi_ip"
 
-	_connected = try_until(test_internet, _max_count)
+	_connected = try_until(
+		test_internet,
+		_max_count,
+		lambda c : print("attempt internet connection successful, attempt {0}".format(c))
+		lambda c : print("attempt internet connection failed, attempt {0}".format(c))
+	)
 
 	if (_connected):
-		_count = 0
-		_end_trying = False
-		while not _end_trying:
-			if report_network(_server, _api):
-				print('attempt to connect {0} successful'.format(_server))
-				_end_trying = True
-			else:
-				print('attempt to connect {0} failed'.format(_server))
-				if _count >= _max_count:
-					_end_trying = True
-				else:
-					sleep(1)
-					_count += 1
+		try_until(
+			report_network,
+			_max_count,
+			lambda c : print("report to {0} successful, attempt {1}".format(_server, c))
+			lambda c : print("report to {0} failed, attempt {1}".format(_server, c))
+			_server, _api
+		)
 		
 	
 
