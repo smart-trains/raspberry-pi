@@ -58,7 +58,7 @@ if __name__ == '__main__':
 		_count = 0
 
 		while not _end_trying:
-			if func(*args[4:]):
+			if func(*args):
 				succ_cb(_count)
 				_end_trying = True
 				_success = True
@@ -72,8 +72,7 @@ if __name__ == '__main__':
 
 		return _success
 
-
-	_max_count = 1000
+	_max_count = 500
 	_server = "52.65.244.105"
 	_api = "/api/rpi_ip"
 
@@ -89,10 +88,6 @@ if __name__ == '__main__':
 			report_network,
 			_max_count,
 			lambda c: print("report to {0} successful, attempt {1}".format(_server, c)),
-			lambda c: print("report to {0} failed, attempt {1}".format(_server, c))
+			lambda c: print("report to {0} failed, attempt {1}".format(_server, c)),
 			_server, _api
 		)
-		
-	
-
-
