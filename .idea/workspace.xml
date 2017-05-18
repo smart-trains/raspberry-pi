@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7ff887ea-75d7-4ebe-ab76-57af2e983356" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/test_rs485_serial.py" afterPath="$PROJECT_DIR$/app/test_rs485_serial.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/startup/report_network.py" afterPath="$PROJECT_DIR$/startup/report_network.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,8 +16,8 @@
       <file leaf-file-name="test_rs485_serial.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/test_rs485_serial.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="69" column="40" lean-forward="false" selection-start-line="69" selection-start-column="40" selection-end-line="69" selection-end-column="40" />
+            <state relative-caret-position="495">
+              <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -29,8 +28,8 @@
       <file leaf-file-name="report_network.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/startup/report_network.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="597">
-              <caret line="81" column="23" lean-forward="true" selection-start-line="80" selection-start-column="4" selection-end-line="81" selection-end-column="23" />
+            <state relative-caret-position="87">
+              <caret line="47" column="18" lean-forward="true" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -45,9 +44,11 @@
       <find>resp</find>
       <find>start_wait</find>
       <find />
+      <find>json</find>
     </findStrings>
     <replaceStrings>
       <replace />
+      <replace>msg</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -260,8 +261,8 @@
     <entry file="file://$PROJECT_DIR$/app/project.py" />
     <entry file="file://$PROJECT_DIR$/startup/report_network.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="597">
-          <caret line="81" column="23" lean-forward="true" selection-start-line="80" selection-start-column="4" selection-end-line="81" selection-end-column="23" />
+        <state relative-caret-position="87">
+          <caret line="47" column="18" lean-forward="true" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
@@ -270,8 +271,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/test_rs485_serial.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="69" column="40" lean-forward="false" selection-start-line="69" selection-start-column="40" selection-end-line="69" selection-end-column="40" />
+        <state relative-caret-position="495">
+          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
