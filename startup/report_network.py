@@ -38,12 +38,12 @@ def test_internet():
 		conn.close()
 	return result
 
-def report_network():
-	conn = http.HTTPConnection(_server)
+def report_network(server, api):
+	conn = http.HTTPConnection(server)
 	headers = {'Content-type': 'application/json'}
 	result = False
 	try:
-		conn.request("POST", _api, json.dumps({'ssid': getssid(), 'ip': getip()}), headers)
+		conn.request("POST", api, json.dumps({'ssid': getssid(), 'ip': getip()}), headers)
 		result = True
 	except:
 		pass
@@ -51,41 +51,43 @@ def report_network():
 		conn.close()
 	return result
 
-_connected = False
+if __name__ == '__main__':
+	def try_until(func, max_trials):
+		_end_trying = False
+		_count = 0
 
-_max_count = 1000
-_count = 0
-_end_trying = False
-
-_server = "52.65.244.105"
-_api = "/api/rpi_ip"
-
-while not _end_trying:
-	if test_internet():
-		print("attempt {0}: successful".format(_count))
-		_end_trying = True
-		_connected = True
-	else:
-		print("attempt {0}: failed".format(_count))
-		if _count >= _max_count:
+		while not _end_trying:
+		if func():
+			print("attempt {0}: successful".format(_count))
 			_end_trying = True
 		else:
-			sleep(1)
-	_count += 1
-
-if (_connected):
-	_count = 0
-	_end_trying = False
-	while not _end_trying:
-		if report_network():
-			print('attempt to connect {0} successful'.format(_server))
-			_end_trying = True
-		else:
-			print('attempt to connect {0} failed'.format(_server))
-			if _count >= _max_count:
+			print("attempt {0}: failed".format(_count))
+			if _count >= max_trials:
 				_end_trying = True
 			else:
 				sleep(1)
+				_count += 1
+
+	_max_count = 1000
+	_server = "52.65.244.105"
+	_api = "/api/rpi_ip"
+
+	_connected = try_until(test_internet, _max_count)
+
+	if (_connected):
+		_count = 0
+		_end_trying = False
+		while not _end_trying:
+			if report_network(_server, _api):
+				print('attempt to connect {0} successful'.format(_server))
+				_end_trying = True
+			else:
+				print('attempt to connect {0} failed'.format(_server))
+				if _count >= _max_count:
+					_end_trying = True
+				else:
+					sleep(1)
+					_count += 1
 		
 	
 
