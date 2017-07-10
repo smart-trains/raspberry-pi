@@ -27,11 +27,12 @@ c = Const()
 # Borad setup
 gpio.setmode(gpio.BOARD)
 gpio.setup(c.PIN_RO, gpio.IN, gpio.PUD_UP)
-gpio.setup(c.PIN_RE, gpio.OUT, gpio.PUD_UP);
-gpio.setup(c.PIN_DE, gpio.OUT, gpio.PUD_DOWN);
-gpio.setup(c.PIN_DI, gpio.OUT, gpio.PUD_UP);
+gpio.setup(c.PIN_RE, gpio.OUT);
+gpio.setup(c.PIN_DE, gpio.OUT);
+gpio.setup(c.PIN_DI, gpio.OUT);
 
-gpio.output(c.PIN_DE, 1)
+gpio.output(c.PIN_RE, 1) # disable
+gpio.output(c.PIN_DE, 1) # enable
 
 # Program
 try:
