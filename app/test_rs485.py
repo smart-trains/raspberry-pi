@@ -37,7 +37,7 @@ gpio.output(c.PIN_DE, 1) # enable
 # Program
 try:
 	while True:
-		gpio.output(c.PIN_DI, dt.datetime.now().second % 2)
+		gpio.output(c.PIN_DI, dt.now().second % 2)
 		sleep(1)
 except KeyboardInterrupt:
 	pass
