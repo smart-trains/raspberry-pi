@@ -4,21 +4,13 @@ from datetime import datetime as dt
 
 # helper type
 class Const(object):
- 	_RO = 31
- 	_RE = 33
- 	_DE = 35
- 	_DI = 37
+ 	_RO = 10
+ 	_DI = 8
 
- 	@property # Receiver Output
+ 	@property # Receiver Output (=Pi input)
  	def PIN_RO(self):
  		return type(self)._RO
- 	@property # Receiver output Enable, active LOW
- 	def PIN_RE(self):
- 		return type(self)._RE
- 	@property # Driver output Enable, active HIGH
- 	def PIN_DE(self):
- 		return type(self)._DE
- 	@property # Driver Input
+ 	@property # Driver Input (=Pi output)
  	def PIN_DI(self):
  		return type(self)._DI
 
@@ -27,12 +19,9 @@ c = Const()
 # Borad setup
 gpio.setmode(gpio.BOARD)
 gpio.setup(c.PIN_RO, gpio.IN, gpio.PUD_UP)
-gpio.setup(c.PIN_RE, gpio.OUT);
-gpio.setup(c.PIN_DE, gpio.OUT);
 gpio.setup(c.PIN_DI, gpio.OUT);
 
-gpio.output(c.PIN_RE, 1) # disable
-gpio.output(c.PIN_DE, 1) # enable
+gpio.output(c.PIN_DI, 0) # disable
 
 # Program
 try:
