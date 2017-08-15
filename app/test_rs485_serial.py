@@ -10,6 +10,7 @@ period = 0.1/num_dct
 s = serial.Serial(port="/dev/ttyAMA0", baudrate=38400, timeout=period/2)
 
 ctrl = 0b0101
+resp = 0b0100
 addr = init_addr
 
 try:
@@ -20,16 +21,18 @@ try:
         s.write(bytearray([word]))
 
         start_wait_t = time()
-        while not s.in_waiting:
+        while s.in_waiting < 66:
             if time() - start_wait_t > period:
                 break
 
         data = s.read(66)
         print('time: {0}'.format(str(dt.now())))
+        print('word: {0}'.format(bin(word)))
 
         if not data:
-            print('word: {0}'.format(bin(word)))
             print('NO DATA')
+        elif data[0] != (resp << 4) + addr:
+            print('INVALID RESPONSE')
         else:
             for i, datum in enumerate(data):
                 if i == 0:
