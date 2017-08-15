@@ -2,12 +2,13 @@ import serial
 import RPi.GPIO as gpio
 from time import sleep, time
 from datetime import datetime as dt
+import http.client as http
 
 num_dct = 6
 init_addr = 0b0001
 period = 0.1/num_dct
 
-s = serial.Serial(port="/dev/ttyAMA0", baudrate=38400, timeout=period/2)
+s = serial.Serial(port="/dev/ttyAMA0", baudrate=50000, timeout=period)
 
 ctrl = 0b0101
 resp = 0b0100
@@ -19,11 +20,6 @@ try:
 
         word = (ctrl << 4) + addr
         s.write(bytearray([word]))
-
-        start_wait_t = time()
-        while s.in_waiting < 66:
-            if time() - start_wait_t > period:
-                break
 
         data = s.read(66)
         print('time: {0}'.format(str(dt.now())))
