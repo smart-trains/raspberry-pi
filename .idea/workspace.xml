@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ff887ea-75d7-4ebe-ab76-57af2e983356" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/project.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/read_temp.py" afterPath="$PROJECT_DIR$/test/read_temp.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/test_pin_11.py" afterPath="$PROJECT_DIR$/test/test_pin_11.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/test_rs485.py" afterPath="$PROJECT_DIR$/test/test_rs485.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/test_rs485_serial_manual.py" afterPath="$PROJECT_DIR$/test/test_rs485_serial_manual.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/test_rs485_serial.py" afterPath="$PROJECT_DIR$/app/test_rs485_serial.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/startup/report_network.py" afterPath="$PROJECT_DIR$/startup/report_network.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="test_rs485_serial.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/test_rs485_serial.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -26,6 +21,11 @@
               <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
+                <marker date="1502794974000" expanded="true" signature="308:1392" ph="..." />
+                <marker date="1502794974000" expanded="true" signature="324:1392" ph="..." />
+                <marker date="1502794974000" expanded="true" signature="687:1179" ph="..." />
+                <marker date="1502794974000" expanded="true" signature="732:1179" ph="..." />
+                <marker date="1502794974000" expanded="true" signature="944:1179" ph="..." />
               </folding>
             </state>
           </provider>
@@ -34,8 +34,8 @@
       <file leaf-file-name="report_network.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/startup/report_network.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="59" column="44" lean-forward="true" selection-start-line="59" selection-start-column="44" selection-end-line="59" selection-end-column="44" />
+            <state relative-caret-position="575">
+              <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -72,7 +72,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="width" value="839" />
     <option name="height" value="1046" />
   </component>
@@ -159,10 +159,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1046" extended-state="6" />
+    <frame x="0" y="0" width="839" height="1046" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15833333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15733016" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -196,10 +196,25 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/test_rs485_serial.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="60">
+          <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
+            <marker date="1502794974000" expanded="true" signature="308:1392" ph="..." />
+            <marker date="1502794974000" expanded="true" signature="324:1392" ph="..." />
+            <marker date="1502794974000" expanded="true" signature="687:1179" ph="..." />
+            <marker date="1502794974000" expanded="true" signature="732:1179" ph="..." />
+            <marker date="1502794974000" expanded="true" signature="944:1179" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/startup/report_network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1230">
+          <caret line="85" column="19" lean-forward="true" selection-start-line="85" selection-start-column="19" selection-end-line="85" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -210,6 +225,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
+            <marker date="1502794974000" expanded="true" signature="308:1392" ph="..." />
+            <marker date="1502794974000" expanded="true" signature="324:1392" ph="..." />
+            <marker date="1502794974000" expanded="true" signature="687:1179" ph="..." />
+            <marker date="1502794974000" expanded="true" signature="732:1179" ph="..." />
+            <marker date="1502794974000" expanded="true" signature="944:1179" ph="..." />
           </folding>
         </state>
       </provider>
@@ -220,6 +240,11 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
+            <marker date="1502794974000" expanded="true" signature="308:1392" ph="..." />
+            <marker date="1502794974000" expanded="true" signature="324:1392" ph="..." />
+            <marker date="1502794974000" expanded="true" signature="687:1179" ph="..." />
+            <marker date="1502794974000" expanded="true" signature="732:1179" ph="..." />
+            <marker date="1502794974000" expanded="true" signature="944:1179" ph="..." />
           </folding>
         </state>
       </provider>
@@ -230,6 +255,26 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
+            <marker date="1502794974000" expanded="true" signature="308:1392" ph="..." />
+            <marker date="1502794974000" expanded="true" signature="324:1392" ph="..." />
+            <marker date="1502794974000" expanded="true" signature="687:1179" ph="..." />
+            <marker date="1502794974000" expanded="true" signature="732:1179" ph="..." />
+            <marker date="1502794974000" expanded="true" signature="944:1179" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/test_rs485_serial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <marker date="1502794974000" expanded="true" signature="308:1392" ph="..." />
+            <marker date="1502794974000" expanded="true" signature="324:1392" ph="..." />
+            <marker date="1502794974000" expanded="true" signature="687:1179" ph="..." />
+            <marker date="1502794974000" expanded="true" signature="732:1179" ph="..." />
+            <marker date="1502794974000" expanded="true" signature="944:1179" ph="..." />
           </folding>
         </state>
       </provider>
@@ -241,35 +286,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/Solarized (Dark).icls">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="763" column="47" lean-forward="false" selection-start-line="763" selection-start-column="47" selection-end-line="763" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/project.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Downloads/Solarized (Dark).icls" />
+    <entry file="file://$PROJECT_DIR$/app/project.py" />
     <entry file="file://$PROJECT_DIR$/app/test_rs485_serial.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
+            <marker date="1502794974000" expanded="true" signature="308:1392" ph="..." />
+            <marker date="1502794974000" expanded="true" signature="324:1392" ph="..." />
+            <marker date="1502794974000" expanded="true" signature="687:1179" ph="..." />
+            <marker date="1502794974000" expanded="true" signature="732:1179" ph="..." />
+            <marker date="1502794974000" expanded="true" signature="944:1179" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/startup/report_network.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="59" column="44" lean-forward="true" selection-start-line="59" selection-start-column="44" selection-end-line="59" selection-end-column="44" />
+        <state relative-caret-position="575">
+          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>

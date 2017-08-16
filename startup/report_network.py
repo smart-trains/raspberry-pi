@@ -1,5 +1,5 @@
 from subprocess import check_output
-from time import sleep
+from time import sleep, time
 import http.client as http
 import json
 
@@ -47,7 +47,7 @@ def report_network(server, api):
     headers = {'Content-type': 'application/json'}
     result = False
     try:
-        conn.request("POST", api, json.dumps({'ssid': getssid(), 'ip': getip()}), headers)
+        conn.request("POST", api, json.dumps({'ssid': getssid(), 'ip': getip(), 'datetime': int(time())}), headers)
         result = True
     except:
         pass
@@ -79,7 +79,7 @@ if __name__ == '__main__':
 
     _max_count = 500
     _server = "52.65.244.105"
-    _api = "/api/rpi_ip"
+    _api = "/RpiStatus"
 
     _connected = try_until(
         test_internet,
