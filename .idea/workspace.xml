@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ff887ea-75d7-4ebe-ab76-57af2e983356" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/test_rs485_serial.py" afterPath="$PROJECT_DIR$/app/test_rs485_serial.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/startup/report_network.py" afterPath="$PROJECT_DIR$/startup/report_network.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,28 +14,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test_rs485_serial.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test_rs485_serial.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/test_rs485_serial.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+            <state relative-caret-position="567">
+              <caret line="69" column="40" lean-forward="false" selection-start-line="69" selection-start-column="40" selection-end-line="69" selection-end-column="40" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <marker date="1502794974000" expanded="true" signature="308:1392" ph="..." />
-                <marker date="1502794974000" expanded="true" signature="324:1392" ph="..." />
-                <marker date="1502794974000" expanded="true" signature="687:1179" ph="..." />
-                <marker date="1502794974000" expanded="true" signature="732:1179" ph="..." />
-                <marker date="1502794974000" expanded="true" signature="944:1179" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="report_network.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="report_network.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/startup/report_network.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+            <state relative-caret-position="597">
+              <caret line="81" column="23" lean-forward="true" selection-start-line="80" selection-start-column="4" selection-end-line="81" selection-end-column="23" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -61,8 +56,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/test_rs485_serial.py" />
         <option value="$PROJECT_DIR$/startup/report_network.py" />
+        <option value="$PROJECT_DIR$/app/test_rs485_serial.py" />
       </list>
     </option>
   </component>
@@ -72,7 +67,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="839" />
     <option name="height" value="1046" />
   </component>
@@ -159,10 +154,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="839" height="1046" extended-state="0" />
+    <frame x="0" y="0" width="1680" height="1046" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15733016" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07857143" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -200,11 +195,6 @@
           <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1502794974000" expanded="true" signature="308:1392" ph="..." />
-            <marker date="1502794974000" expanded="true" signature="324:1392" ph="..." />
-            <marker date="1502794974000" expanded="true" signature="687:1179" ph="..." />
-            <marker date="1502794974000" expanded="true" signature="732:1179" ph="..." />
-            <marker date="1502794974000" expanded="true" signature="944:1179" ph="..." />
           </folding>
         </state>
       </provider>
@@ -225,11 +215,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1502794974000" expanded="true" signature="308:1392" ph="..." />
-            <marker date="1502794974000" expanded="true" signature="324:1392" ph="..." />
-            <marker date="1502794974000" expanded="true" signature="687:1179" ph="..." />
-            <marker date="1502794974000" expanded="true" signature="732:1179" ph="..." />
-            <marker date="1502794974000" expanded="true" signature="944:1179" ph="..." />
           </folding>
         </state>
       </provider>
@@ -240,11 +225,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1502794974000" expanded="true" signature="308:1392" ph="..." />
-            <marker date="1502794974000" expanded="true" signature="324:1392" ph="..." />
-            <marker date="1502794974000" expanded="true" signature="687:1179" ph="..." />
-            <marker date="1502794974000" expanded="true" signature="732:1179" ph="..." />
-            <marker date="1502794974000" expanded="true" signature="944:1179" ph="..." />
           </folding>
         </state>
       </provider>
@@ -255,11 +235,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1502794974000" expanded="true" signature="308:1392" ph="..." />
-            <marker date="1502794974000" expanded="true" signature="324:1392" ph="..." />
-            <marker date="1502794974000" expanded="true" signature="687:1179" ph="..." />
-            <marker date="1502794974000" expanded="true" signature="732:1179" ph="..." />
-            <marker date="1502794974000" expanded="true" signature="944:1179" ph="..." />
           </folding>
         </state>
       </provider>
@@ -270,11 +245,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1502794974000" expanded="true" signature="308:1392" ph="..." />
-            <marker date="1502794974000" expanded="true" signature="324:1392" ph="..." />
-            <marker date="1502794974000" expanded="true" signature="687:1179" ph="..." />
-            <marker date="1502794974000" expanded="true" signature="732:1179" ph="..." />
-            <marker date="1502794974000" expanded="true" signature="944:1179" ph="..." />
           </folding>
         </state>
       </provider>
@@ -288,27 +258,22 @@
     </entry>
     <entry file="file://$USER_HOME$/Downloads/Solarized (Dark).icls" />
     <entry file="file://$PROJECT_DIR$/app/project.py" />
-    <entry file="file://$PROJECT_DIR$/app/test_rs485_serial.py">
+    <entry file="file://$PROJECT_DIR$/startup/report_network.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+        <state relative-caret-position="597">
+          <caret line="81" column="23" lean-forward="true" selection-start-line="80" selection-start-column="4" selection-end-line="81" selection-end-column="23" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
-            <marker date="1502794974000" expanded="true" signature="308:1392" ph="..." />
-            <marker date="1502794974000" expanded="true" signature="324:1392" ph="..." />
-            <marker date="1502794974000" expanded="true" signature="687:1179" ph="..." />
-            <marker date="1502794974000" expanded="true" signature="732:1179" ph="..." />
-            <marker date="1502794974000" expanded="true" signature="944:1179" ph="..." />
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/startup/report_network.py">
+    <entry file="file://$PROJECT_DIR$/app/test_rs485_serial.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+        <state relative-caret-position="567">
+          <caret line="69" column="40" lean-forward="false" selection-start-line="69" selection-start-column="40" selection-end-line="69" selection-end-column="40" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>

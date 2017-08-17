@@ -47,7 +47,7 @@ def report_network(server, api):
     headers = {'Content-type': 'application/json'}
     result = False
     try:
-        conn.request("POST", api, json.dumps({'ssid': getssid(), 'ip': getip(), 'datetime': int(time())}), headers)
+        conn.request("POST", api, json.dumps({'ssid': getssid(), 'ip': getip(), 'datetime': int(time()) * 1000}), headers)
         result = True
     except:
         pass
