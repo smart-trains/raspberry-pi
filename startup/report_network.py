@@ -3,12 +3,16 @@ from time import sleep, time
 import http.client as http
 import json
 
+_train__c = 'a017F0000050NIRQA2'
+_max_count = 500
+_server = 'smart-trains.herokuapp.com'
+_api = '/methods/lcu_status_insert'
 
 def getssid():
     try:
-        ssid = check_output(["iwgetid"])\
+        ssid = check_output(['iwgetid'])\
             .decode('utf-8')\
-            .split("ESSID:")[1]\
+            .split('ESSID:')[1]\
             .translate(
             {ord(c): '' for c in '\n"'}
         )
@@ -19,7 +23,7 @@ def getssid():
 
 def getip():
     try:
-        ip = check_output(["hostname", "-I"])\
+        ip = check_output(['hostname', '-I'])\
             .decode('utf-8')\
             .translate(
             {ord(c): '' for c in '\n '}
@@ -30,10 +34,10 @@ def getip():
 
 
 def test_internet():
-    conn = http.HTTPConnection("www.google.com", timeout=2)
+    conn = http.HTTPConnection('www.google.com', timeout=2)
     result = False
     try:
-        conn.request("HEAD", "/")
+        conn.request('HEAD', '/')
         result = True
     except:
         pass
@@ -48,7 +52,6 @@ def report_network(server, api):
     result = False
     try:
         conn.request("POST", api, json.dumps({'ssid': getssid(), 'ip': getip(), 'datetime': int(time()) * 1000}), headers)
-        print(conn.getresponse().read())
         result = True
     except Exception as e:
         print(e)
@@ -78,22 +81,18 @@ if __name__ == '__main__':
 
         return _success
 
-    _max_count = 500
-    _server = "52.65.244.105"
-    _api = "/RpiStatus"
-
     _connected = try_until(
         test_internet,
         _max_count,
-        lambda c: print("attempt internet connection successful, attempt {0}".format(c)),
-        lambda c: print("attempt internet connection failed, attempt {0}".format(c))
+        lambda c: print('attempt internet connection successful, attempt {0}'.format(c)),
+        lambda c: print('attempt internet connection failed, attempt {0}'.format(c))
     )
 
     if (_connected):
         try_until(
             report_network,
             _max_count,
-            lambda c: print("report to {0} successful, attempt {1}".format(_server, c)),
-            lambda c: print("report to {0} failed, attempt {1}".format(_server, c)),
+            lambda c: print('report to {0} successful, attempt {1}'.format(_server, c)),
+            lambda c: print('report to {0} failed, attempt {1}'.format(_server, c)),
             _server, _api
         )
