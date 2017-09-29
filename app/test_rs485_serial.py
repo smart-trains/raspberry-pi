@@ -12,6 +12,7 @@ def report_temp(server, api, data):
     result = False
     try:
         conn.request("POST", api, json.dumps(data), headers)
+        print(conn.getresponse())
         result = True
     except Exception as e:
         print(e)
@@ -50,7 +51,7 @@ try:
         else:
             msg = {
                 "address": addr,
-                "datetime": time() * 1000
+                "datetime": int(time()) * 1000
             }
 
             for i, datum in enumerate(data):

@@ -48,9 +48,10 @@ def report_network(server, api):
     result = False
     try:
         conn.request("POST", api, json.dumps({'ssid': getssid(), 'ip': getip(), 'datetime': int(time()) * 1000}), headers)
+        print(conn.getresponse().read())
         result = True
-    except:
-        pass
+    except Exception as e:
+        print(e)
     finally:
         conn.close()
     return result
