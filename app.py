@@ -14,10 +14,15 @@ try:
         try:
             start_t = time()
 
-            print('time: {0}'.format(str(dt.now())))
-            print('word: {0}'.format(bin(rs485.get_word('poll', rs485.addr))))
-
             dct_data = rs485.poll_and_next()
+
+            print('time: {0}'.format(str(dt.now())))
+            print('carriage: {0}'.format(dct_data.carriage__c))
+            print('matrix: {data}'.format(data=dct_data.temperature_matrix))
+            print('temp: {data}'.format(data=dct_data.temperature))
+            print('humidity: {data}'.format(data=dct_data.humidity))
+            print('vibration: {data}'.format(data=dct_data.temperature_matrix))
+
             server.report(dct_data)
         
             time_left = rs485.period - (time() - start_t)
