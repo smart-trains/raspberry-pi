@@ -38,7 +38,7 @@ def parse_vibration(data):
     print(data)
 
     for i in range(0, len(data), 2):
-        number = int.from_bytes(data[i:i + 1], byteorder='big', signed=True)
+        number = int.from_bytes(data[i:i + 2], byteorder='big', signed=True)
 
         if i < 6:
             number /= acceleration_factor
