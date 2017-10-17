@@ -104,6 +104,8 @@ def validate_head(head):
     if not head:
         raise IOError('NO DATA')
     elif head[0] != get_word('resp', address):
+        print(head[0])
+        print(get_word('resp', address))
         raise IOError('INVALID RESPONSE HEAD: {head}'.format(head=bin(head[0])))
 
     return head
@@ -113,6 +115,7 @@ def inc_address():
     global address
     address = address + 1
     if address == init_address + num_terminals:
+        global address
         address = 0b0001
 
 
