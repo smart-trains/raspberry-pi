@@ -49,10 +49,10 @@ sensors = {
 
 # Mapping between internal address and carriage id
 sub_dct_carriage_mapping = {
-    0b0001: 0x01,
-    0b0010: 0x01,
-    0b0011: 0x02,
-    0b0110: 0x02,
+    0b0001: 0x00,
+    0b0010: 0x00,
+    0b0011: 0x01,
+    0b0110: 0x01,
 }
 
 serial = s.Serial(port='/dev/ttyAMA0', baudrate=brate, timeout=3*period)
