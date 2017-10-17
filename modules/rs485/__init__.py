@@ -55,7 +55,7 @@ sub_dct_carriage_mapping = {
     0b0110: 0x02,
 }
 
-serial = s.Serial(port='/dev/ttyAMA0', baudrate=brate, timeout=2*period)
+serial = s.Serial(port='/dev/ttyAMA0', baudrate=brate, timeout=3*period)
 
 
 def poll(internal_address, parsed=True):
