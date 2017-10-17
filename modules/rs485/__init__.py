@@ -58,6 +58,7 @@ serial = s.Serial(port='/dev/ttyAMA0', baudrate=brate, timeout=2*period)
 
 
 def poll(internal_address, parsed=True):
+    print('iaddress: {a}'.format(a=bin(internal_address)))
     word = get_word('poll', internal_address)
     serial.write(bytearray([word]))
 
@@ -94,8 +95,13 @@ def poll(internal_address, parsed=True):
 
 
 def poll_and_next(parsed=True):
-    data = poll(address, parsed=parsed)
-    inc_address()
+    try:
+        data = poll(address, parsed=parsed)
+    except:
+        print('jb')
+        raise
+    finally:
+        inc_address()
 
     return data
 
@@ -114,6 +120,7 @@ def validate_head(head):
 def inc_address():
     global address
     address = address + 1
+
     if address == init_address + num_terminals:
         global address
         address = 0b0001
