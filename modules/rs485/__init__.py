@@ -73,9 +73,9 @@ def poll(internal_address, parsed=True):
     not_finished = True
 
     while not_finished:
-        print(sensor_id)
         try:
             sensor_id = serial.read()[0]
+            print(sensor_id)
         except IndexError:
             print('Last byte not detected')
             break        
