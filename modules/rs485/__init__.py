@@ -65,8 +65,7 @@ def poll(internal_address, parsed=True):
     try:
         validate_head(head)
     except ValueError as e:
-        print(e)
-        return
+        raise e
 
     result = {
         'address': internal_address
