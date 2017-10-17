@@ -13,7 +13,7 @@ num_dct = 6
 # By using Arduino as fallback, we have 2 terminals representing one DCT
 num_terminals = 12
 init_address = 0b0001
-period = 0.1/num_terminals
+period = 0.2/num_terminals
 brate = 51500  # Maximum rate due to slow n-MOSFET
 
 address = init_address
@@ -21,7 +21,7 @@ address = init_address
 controls = {
     'poll': 0b0101,
     'resp': 0b0100,
-    'end': 0xFE
+    'end': 0xFF
 }
 
 sensors = {
@@ -109,6 +109,8 @@ def validate_head(head):
     if not head:
         raise IOError('NO DATA')
     elif head[0] != get_word('resp', address):
+        #  Clear other junk bytes
+        serial.read(serial.in_waiting)
         raise IOError('INVALID RESPONSE HEAD: {head}'.format(head=bin(head[0])))
 
     return head
