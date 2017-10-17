@@ -64,10 +64,7 @@ def poll(internal_address, parsed=True):
     serial.write(bytearray([word]))
 
     head = serial.read()
-    try:
-        validate_head(head)
-    except IOError as e:s
-        raise e
+    validate_head(head)
 
     result = {
         'address': internal_address
