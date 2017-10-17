@@ -59,8 +59,8 @@ def report_network(server, api):
                 }
         conn.request('POST', api, json.dumps(data), headers)
         result = True
-    except:
-        pass
+    except Exception as e:
+        print(e)
     finally:
         conn.close()
     return result
