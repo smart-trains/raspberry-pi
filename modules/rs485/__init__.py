@@ -73,7 +73,11 @@ def poll(internal_address, parsed=True):
     not_finished = True
 
     while not_finished:
-        sensor_id = serial.read()[0]
+        try:
+            sensor_id = serial.read()[0]
+        except IndexError:
+            print('Last byte not detected')
+            break        
 
         if sensor_id == 0xFF:
             not_finished = False
@@ -97,9 +101,9 @@ def poll_and_next(parsed=True):
 
 def validate_head(head):
     if not head:
-        raise IOError('NO DATA: {head}'.format(head=bin(head)))
+        raise IOError('NO DATA')
     elif head[0] != get_word('resp', address):
-        raise IOError('INVALID RESPONSE: {head}'.format(head=bin(head)))
+        raise IOError('INVALID RESPONSE HEAD: {head}'.format(head=bin(head[0])))
 
     return head
 
