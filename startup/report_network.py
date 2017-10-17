@@ -1,5 +1,6 @@
 from subprocess import check_output
-from time import sleep, time
+from time import sleep
+from datetime import datetime
 import http.client as http
 import json
 
@@ -51,7 +52,12 @@ def report_network(server, api):
     headers = {'Content-type': 'application/json'}
     result = False
     try:
-        conn.request('POST', api, json.dumps({'ssid': getssid(), 'ip': getip(), 'datetime': int(time()) * 1000}), headers)
+        data = {'ssid__c': getssid(),
+                'ip__c': getip(),
+                'recorded_at__c': datetime.now().isoformat(' '),
+                'train__c': _train__c
+                }
+        conn.request('POST', api, json.dumps(data), headers)
         result = True
     except:
         pass
