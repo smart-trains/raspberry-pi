@@ -13,7 +13,7 @@ num_dct = 6
 # By using Arduino as fallback, we have 2 terminals representing one DCT
 num_terminals = 12
 init_address = 0b0001
-period = 0.2/num_terminals
+period = 0.2 / num_terminals
 brate = 51500  # Maximum rate due to slow n-MOSFET
 
 address = init_address
