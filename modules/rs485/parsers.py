@@ -14,14 +14,17 @@ def parse_temperature_matrix(data):
 
 
 def parse_temperature(data):
-    return {'temperature__c': struct.unpack('f', data)}
+    return {'temperature__c': struct.unpack('f', data)[0]}
 
 
 def parse_humidity(data):
-    return {'humidity__c': struct.unpack('f', data)}
+    return {'humidity__c': struct.unpack('f', data)[0]}
 
 
 def parse_vibration(data):
+    acceleration_factor = 16384
+    gyro_factor = 131
+
     keys = [
         'acceleration_x__c',
         'acceleration_y__c',
@@ -32,12 +35,16 @@ def parse_vibration(data):
     ]
     message = {}
 
-    byte_sequence = ''
+    byte_sequence = b''
     for i, datum in enumerate(data):
-        if i % 2 == 0:
-            byte_sequence += datum
-        else:
-            byte_sequence += datum
-            message[keys[(i - 1) / 2]] = int.from_bytes(byte_sequence, byteorder='big')
+        byte_sequence += datum
+        if i % 2 == 1:
+            number = int.from_bytes(byte_sequence, byteorder='big')
+            if i < 3:
+                number /= acceleration_factor
+            else:
+                number /= gyro_factor
+
+            message[keys[(i - 1) / 2]] = number
 
     return message
