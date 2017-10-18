@@ -1,10 +1,10 @@
 import struct
 
 
-def parse_temperature_matrix(bytearray):
+def parse_temperature_matrix(data):
     message = {}
 
-    for i, datum in enumerate(bytearray):
+    for i, datum in enumerate(data):
         if i == 0:
             message['thermistor__c'] = datum * 0.0625
         else:
@@ -13,15 +13,15 @@ def parse_temperature_matrix(bytearray):
     return message
 
 
-def parse_temperature(bytearray):
-    return {'temperature__c': struct.unpack('f', bytearray)}
+def parse_temperature(data):
+    return {'temperature__c': struct.unpack('f', data)}
 
 
-def parse_humidity():
-    return {'humidity__c': struct.unpack('f', bytearray)}
+def parse_humidity(data):
+    return {'humidity__c': struct.unpack('f', data)}
 
 
-def parse_vibration():
+def parse_vibration(data):
     keys = [
         'acceleration_x__c',
         'acceleration_y__c',
@@ -32,12 +32,12 @@ def parse_vibration():
     ]
     message = {}
 
-    bytes = ''
-    for i, datum in enumerate(bytearray):
+    byte_sequence = ''
+    for i, datum in enumerate(data):
         if i % 2 == 0:
-            bytes += datum
+            byte_sequence += datum
         else:
-            bytes += datum
-            message[keys[(i - 1) / 2]] = int.from_bytes(bytes, byteorder='big')
+            byte_sequence += datum
+            message[keys[(i - 1) / 2]] = int.from_bytes(byte_sequence, byteorder='big')
 
     return message

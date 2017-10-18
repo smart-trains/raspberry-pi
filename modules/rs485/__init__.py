@@ -66,8 +66,8 @@ def poll(internal_address, parsed=True):
         validate_head(head[0])
     except ValueError as e:
         raise e
-    except IndexError as e:
-        raise e
+    except IndexError:
+        raise IOError('No header read.')
 
     result = {
         'address': internal_address
