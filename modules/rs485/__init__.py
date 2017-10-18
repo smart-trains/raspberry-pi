@@ -97,9 +97,9 @@ def poll_and_next(parsed=True):
 
 def validate_head(head):
     if not head:
-        raise ValueError('NO DATA')
+        raise ValueError('NO DATA: {head}'.format(head))
     elif head != get_word('resp', address):
-        raise ValueError('INVALID RESPONSE')
+        raise ValueError('INVALID RESPONSE: {head}'.format(head))
 
     return head
 
