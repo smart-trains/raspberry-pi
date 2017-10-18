@@ -37,15 +37,11 @@ def parse_vibration(data):
 
     print(data)
 
-    number = 0
-    for i, datum in enumerate(data):
-        number += datum
+    for i in range(0, len(data), 2):
         if i % 2 == 0:
-            number += (datum << 8)
-        else:
-            number += datum
-            #  number = int.from_bytes(byte_sequence, byteorder='big')
-            if i < 3:
+            number = int.from_bytes(data[i:i + 1], byteorder='big', signed=True)
+
+            if i < 6:
                 number /= acceleration_factor
             else:
                 number /= gyro_factor
