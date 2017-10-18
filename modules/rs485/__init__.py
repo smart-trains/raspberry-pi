@@ -104,8 +104,6 @@ def validate_head(head):
     if not head:
         raise IOError('NO DATA')
     elif head[0] != get_word('resp', address):
-        print(head[0])
-        print(get_word('resp', address))
         raise IOError('INVALID RESPONSE HEAD: {head}'.format(head=bin(head[0])))
 
     return head
