@@ -13,7 +13,7 @@ num_dct = 6
 # By using Arduino as fallback, we have 2 terminals representing one DCT
 num_terminals = 12
 init_address = 0b0001
-period = 1/num_dct
+period = 0.2 / num_terminals
 brate = 51500  # Maximum rate due to slow n-MOSFET
 
 address = init_address
@@ -21,7 +21,7 @@ address = init_address
 controls = {
     'poll': 0b0101,
     'resp': 0b0100,
-    'end': 0xFE
+    'end': 0xFF
 }
 
 sensors = {
@@ -55,7 +55,7 @@ sub_dct_carriage_mapping = {
     0b0110: 0x02,
 }
 
-serial = s.Serial(port='/dev/ttyAMA0', baudrate=brate, timeout=2*period)
+serial = s.Serial(port='/dev/ttyAMA0', baudrate=brate, timeout=3*period)
 
 
 def poll(internal_address, parsed=True):
