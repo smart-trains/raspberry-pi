@@ -31,7 +31,7 @@ try:
         except KeyError as e:
             continue
 
-        else:
+        except:
             raise
 
 except KeyboardInterrupt:

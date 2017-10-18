@@ -35,11 +35,16 @@ def parse_vibration(data):
     ]
     message = {}
 
-    byte_sequence = ''
+    print(data)
+
+    number = 0
     for i, datum in enumerate(data):
-        byte_sequence += datum
-        if i % 2 == 1:
-            number = int.from_bytes(byte_sequence, byteorder='big')
+        number += datum
+        if i % 2 == 0:
+            number += (datum << 8)
+        else:
+            number += datum
+            #  number = int.from_bytes(byte_sequence, byteorder='big')
             if i < 3:
                 number /= acceleration_factor
             else:
