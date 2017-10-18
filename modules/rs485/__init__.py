@@ -73,6 +73,7 @@ def poll(internal_address, parsed=True):
     not_finished = True
 
     while not_finished:
+        print(sensor_id)
         try:
             sensor_id = serial.read()[0]
         except IndexError:
@@ -110,8 +111,8 @@ def validate_head(head):
 
 def inc_address():
     global address
-    next_address = address + 1
-    if next_address == init_address + num_terminals:
+    address = address + 1
+    if address == init_address + num_terminals:
         address = 0b0001
 
 

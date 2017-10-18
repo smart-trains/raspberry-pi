@@ -16,6 +16,8 @@ try:
 
             dct_data = rs485.poll_and_next()
 
+            print(dct_data)
+
             print('time: {0}'.format(str(dt.now())))
             print('carriage: {0}'.format(dct_data['carriage__c']))
             print('matrix: {data}'.format(data=dct_data['temperature_matrix']))
