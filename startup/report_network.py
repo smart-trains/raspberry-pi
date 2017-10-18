@@ -4,10 +4,12 @@ from datetime import datetime
 import http.client as http
 import json
 
-_train__c = 'a017F0000050NIRQA2'
-_max_count = 500
-_server = 'smart-trains.herokuapp.com'
+from ..constants import train__c, server
+
+
 _api = '/methods/lcu_status_insert'
+_max_count = 500
+
 
 def getssid():
     try:
@@ -55,7 +57,7 @@ def report_network(server, api):
         data = {'ssid__c': getssid(),
                 'ip__c': getip(),
                 'recorded_at__c': datetime.now().isoformat(' '),
-                'train__c': _train__c
+                'train__c': train__c
                 }
         conn.request('POST', api, json.dumps(data), headers)
         result = True
@@ -98,7 +100,7 @@ if __name__ == '__main__':
         try_until(
             report_network,
             _max_count,
-            lambda c: print('report to {0} successful, attempt {1}'.format(_server, c)),
-            lambda c: print('report to {0} failed, attempt {1}'.format(_server, c)),
-            _server, _api
+            lambda c: print('report to {0} successful, attempt {1}'.format(server, c)),
+            lambda c: print('report to {0} failed, attempt {1}'.format(server, c)),
+            server, _api
         )
