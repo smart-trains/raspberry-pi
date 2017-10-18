@@ -20,7 +20,8 @@ address = init_address
 
 controls = {
     'poll': 0b0101,
-    'resp': 0b0100
+    'resp': 0b0100,
+    'end': 0xFE
 }
 
 sensors = {
@@ -80,7 +81,7 @@ def poll(internal_address, parsed=True):
             print('Last byte not detected')
             break        
 
-        if sensor_id == 0xFF:
+        if sensor_id == controls['end']:
             not_finished = False
         else:
             sensor = sensors[int(sensor_id)]
