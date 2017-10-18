@@ -38,14 +38,13 @@ def parse_vibration(data):
     print(data)
 
     for i in range(0, len(data), 2):
-        if i % 2 == 0:
-            number = int.from_bytes(data[i:i + 1], byteorder='big', signed=True)
+        number = int.from_bytes(data[i:i + 1], byteorder='big', signed=True)
 
-            if i < 6:
-                number /= acceleration_factor
-            else:
-                number /= gyro_factor
+        if i < 6:
+            number /= acceleration_factor
+        else:
+            number /= gyro_factor
 
-            message[keys[int((i - 1) / 2)]] = number
+        message[keys[i]] = number
 
     return message
