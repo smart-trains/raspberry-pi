@@ -61,7 +61,7 @@ def poll(internal_address, parsed=True):
     word = get_word('poll', internal_address)
     serial.write(bytearray([word]))
 
-    head = serial.read()
+    head = serial.read()[0]
     try:
         validate_head(head)
     except ValueError as e:
@@ -73,12 +73,12 @@ def poll(internal_address, parsed=True):
     not_finished = True
 
     while not_finished:
-        sensor_id = serial.head()
+        sensor_id = serial.head()[0]
 
         if sensor_id == 0xFF:
             not_finished = False
         else:
-            sensor = sensors[sensor_id]
+            sensor = sensors[int(sensor_id)]
             data = serial.read(sensor['bytes'])
             result[sensor['name']] = data
 
@@ -97,9 +97,9 @@ def poll_and_next(parsed=True):
 
 def validate_head(head):
     if not head:
-        raise ValueError('NO DATA: {head}'.format(head))
+        raise ValueError('NO DATA: {head}'.format(head=bin(head)))
     elif head != get_word('resp', address):
-        raise ValueError('INVALID RESPONSE: {head}'.format(head))
+        raise ValueError('INVALID RESPONSE: {head}'.format(head=bin(head)))
 
     return head
 

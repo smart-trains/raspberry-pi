@@ -1,6 +1,6 @@
 from time import sleep, time
 from datetime import datetime as dt
-from .modules import rs485, server
+from raspberrypi.modules import rs485, server
 
 
 def clean_up():
