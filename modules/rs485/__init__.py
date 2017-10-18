@@ -61,10 +61,12 @@ def poll(internal_address, parsed=True):
     word = get_word('poll', internal_address)
     serial.write(bytearray([word]))
 
-    head = serial.read()[0]
+    head = serial.read()
     try:
-        validate_head(head)
+        validate_head(head[0])
     except ValueError as e:
+        raise e
+    except IndexError as e:
         raise e
 
     result = {
@@ -73,7 +75,7 @@ def poll(internal_address, parsed=True):
     not_finished = True
 
     while not_finished:
-        sensor_id = serial.head()[0]
+        sensor_id = serial.read()[0]
 
         if sensor_id == 0xFF:
             not_finished = False

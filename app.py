@@ -33,6 +33,9 @@ try:
         except ValueError as e:
             print(e)
             continue
+        except IndexError as e:
+            print(e)
+            continue
 
         else:
             raise
