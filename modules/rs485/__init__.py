@@ -61,12 +61,13 @@ def poll(internal_address, parsed=True):
     word = get_word('poll', internal_address)
     serial.write(bytearray([word]))
 
+    head = serial.read()
     try:
-        head = serial.read()
+        validate_head(head)
     except ValueError as e:
         print(e)
+        return
 
-    validate_head(head)
     result = {
         'address': internal_address
     }
