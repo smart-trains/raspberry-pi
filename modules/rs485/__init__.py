@@ -76,7 +76,6 @@ def poll(internal_address, parsed=True):
     while not_finished:
         try:
             sensor_id = serial.read()[0]
-            print(sensor_id)
         except IndexError:
             print('Last byte not detected')
             break        
@@ -98,7 +97,6 @@ def poll_and_next(parsed=True):
     try:
         data = poll(address, parsed=parsed)
     except:
-        print('jb')
         raise
     finally:
         inc_address()
@@ -120,7 +118,6 @@ def inc_address():
     address = address + 1
 
     if address == init_address + num_terminals:
-        global address
         address = 0b0001
 
 
