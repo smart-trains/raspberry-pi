@@ -64,10 +64,7 @@ def poll(internal_address, parsed=True):
     serial.write(bytearray([word]))
 
     head = serial.read()
-    try:
-        validate_head(head)
-    except IOError as e:
-        raise e
+    validate_head(head)
 
     result = {
         'address': internal_address
@@ -79,7 +76,8 @@ def poll(internal_address, parsed=True):
             sensor_id = serial.read()[0]
         except IndexError:
             print('Last byte not detected')
-            break        
+            not_finished = False
+            break
 
         if sensor_id == controls['end']:
             not_finished = False

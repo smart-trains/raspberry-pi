@@ -50,6 +50,6 @@ def parse_vibration(data):
             else:
                 number /= gyro_factor
 
-            message[keys[(i - 1) / 2]] = number
+            message[keys[int((i - 1) / 2)]] = number
 
     return message
