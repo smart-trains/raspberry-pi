@@ -30,10 +30,7 @@ try:
             if time_left > 0:
                 sleep(time_left)
 
-        except ValueError as e:
-            print(e)
-            continue
-        except IndexError as e:
+        except IOError as e:
             print(e)
             continue
 

@@ -63,11 +63,9 @@ def poll(internal_address, parsed=True):
 
     head = serial.read()
     try:
-        validate_head(head[0])
-    except ValueError as e:
+        validate_head(head)
+    except IOError as e:
         raise e
-    except IndexError:
-        raise IOError('No header read.')
 
     result = {
         'address': internal_address
@@ -99,9 +97,9 @@ def poll_and_next(parsed=True):
 
 def validate_head(head):
     if not head:
-        raise ValueError('NO DATA: {head}'.format(head=bin(head)))
-    elif head != get_word('resp', address):
-        raise ValueError('INVALID RESPONSE: {head}'.format(head=bin(head)))
+        raise IOError('NO DATA: {head}'.format(head=bin(head)))
+    elif head[0] != get_word('resp', address):
+        raise IOError('INVALID RESPONSE: {head}'.format(head=bin(head)))
 
     return head
 
