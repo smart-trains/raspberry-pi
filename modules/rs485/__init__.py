@@ -59,9 +59,13 @@ serial = s.Serial(port='/dev/ttyAMA0', baudrate=brate, timeout=3*period)
 
 
 def poll(internal_address, parsed=True):
-    print('iaddress: {a}'.format(a=bin(internal_address)))
+    print('address: {a}'.format(a=bin(internal_address)))
     word = get_word('poll', internal_address)
     serial.write(bytearray([word]))
+
+    if internal_address == 0b0001:
+        print(serial.read(68))
+        raise IOError("SB dabanzi")
 
     head = serial.read()
     validate_head(head)
