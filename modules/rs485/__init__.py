@@ -14,7 +14,7 @@ num_dct = 6
 num_terminals = 12
 init_address = 0b0001
 period = 0.2 / num_terminals
-brate = 51500  # Maximum rate due to slow n-MOSFET
+brate = 50000  # Maximum rate: 51500 due to slow n-MOSFET
 
 address = init_address
 
