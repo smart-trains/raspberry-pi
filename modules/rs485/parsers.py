@@ -8,7 +8,7 @@ def parse_temperature_matrix(data):
         if i == 0:
             message['thermistor__c'] = datum * 0.0625
         else:
-            message['cell{index}__c'.format(index=(i - 1))] = datum * 0.25
+            message['cell_{index}__c'.format(index=(i - 1))] = datum * 0.25
 
     return message
 

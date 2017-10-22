@@ -63,6 +63,21 @@ def poll(internal_address, parsed=True):
     word = get_word('poll', internal_address)
     serial.write(bytearray([word]))
 
+    if internal_address == 0b0001:
+        data = serial.read(400)
+        print(len(data))
+        print(data)
+        raise IOError("
+
+
+
+
+
+
+
+
+SB dabanzi")
+
     head = serial.read()
     validate_head(head)
 
